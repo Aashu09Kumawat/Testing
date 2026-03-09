@@ -6,7 +6,8 @@ const app = express();
 app.get("/", (req, res) => {
     res.send("Server is on root.");
 })
+const hostname = '0.0.0.0'; // Listen on all network interfaces
 
-app.listen(port, () => {
-    console.log(`Server is listing on port  ${port}`);
-})
+app.listen(port, hostname, () => {
+    console.log(`Server is running at http://${hostname}:${port}/`);
+});
